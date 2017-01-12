@@ -1,4 +1,3 @@
-console.log("starting notes");
 const fs = require('fs');
 var fetchNotes = () => {
     try{
@@ -41,9 +40,14 @@ var removeNote = (title) => {
     saveNotes(filterednotes);
     return notes.length !== filterednotes.length
 };
+var log = (note) => {
+    console.log(`Title : ${note.title}`);
+    console.log(`Body : ${note.body}`);
+};
 module.exports = {
     addNote,
     getAll,
     getNote,
-    removeNote
+    removeNote,
+    log
 };
